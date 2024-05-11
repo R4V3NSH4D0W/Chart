@@ -1,4 +1,4 @@
-export interface ApiResponse {
+export interface IApiResponse {
   'Weekly Adjusted Time Series': {
     [timestamp: string]: {
       '1. open': string;
@@ -8,4 +8,8 @@ export interface ApiResponse {
       '6. volume': string;
     };
   };
+}
+
+export interface IApiProps {
+  symbol: string;
 }

@@ -14,28 +14,24 @@ import AAText from '../utils/text';
 
 const HomeScreen = () => {
   const [startIndex, setStartIndex] = useState(0);
-  // const [data, setData] = useState<IApiResponse | null>(null);
-  // console.log(data);
+  const [data, setData] = useState<IApiResponse | null>(null);
+
   const [selectedDataType, setSelectedDataType] = useState('open');
   const [selectedDataSource, setSelectedDataSource] = useState<IApiProps>({
     symbol: 'IBM',
   });
 
-  console.log('selected Data Source', selectedDataSource.symbol);
-
   const [loading, setLoading] = useState(false);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const stockData = await getData(selectedDataSource);
-  //     setData(stockData);
-  //     setLoading(false);
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      const stockData = await getData(selectedDataSource);
+      setData(stockData);
+      setLoading(false);
+    };
 
-  //   fetchData();
-  // }, [selectedDataSource]);
-
-  const data = selectedDataSource.symbol === 'IBM' ? IBMApiData : MSFTApiData;
+    fetchData();
+  }, [selectedDataSource]);
 
   if (loading) {
     return (
