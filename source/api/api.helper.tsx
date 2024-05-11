@@ -1,4 +1,4 @@
-import {APIKEY, BaseURl} from '../../env';
+import {APIKEY, BaseURl} from '../../.env';
 import {IApiProps} from '../constants/app.types';
 
 export const getData = async ({symbol}: IApiProps) => {
