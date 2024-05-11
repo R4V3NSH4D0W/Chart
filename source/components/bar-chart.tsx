@@ -1,6 +1,6 @@
 import React from 'react';
 import {BarChart} from 'react-native-chart-kit';
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
 
 interface IChart {
   data: IData[];
@@ -29,11 +29,11 @@ const BarChartComponent = ({data}: IChart) => {
         yAxisSuffix=""
         xLabelsOffset={-15}
         chartConfig={{
-          backgroundColor: '#ffffff',
-          backgroundGradientFrom: '#ffffff',
-          backgroundGradientTo: '#ffffff',
-          color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
           decimalPlaces: 2,
+          backgroundColor: '#ffffff',
+          backgroundGradientTo: '#ffffff',
+          backgroundGradientFrom: '#ffffff',
+          color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
         }}
         verticalLabelRotation={90}
         style={styles.chart}

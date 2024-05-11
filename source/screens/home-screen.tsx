@@ -5,12 +5,14 @@ import Chart from '../components/chart';
 import PieChartComponet from '../components/piechart';
 import BarChartComponent from '../components/bar-chart';
 
-import {IBMApiData, MSFTApiData, getData} from '../api/api.helper';
+import AAText from '../utils/text';
 import AADropDown from '../utils/drop-down';
-import LayoutWrapper from '../wrappers/layout-wrapper';
+
 import {IApiProps, IApiResponse} from '../constants/app.types';
 import {dropDownItems, dropDownSourceItems} from '../constants/app.constant';
-import AAText from '../utils/text';
+
+import {getData} from '../api/api.helper';
+import LayoutWrapper from '../wrappers/layout-wrapper';
 
 const HomeScreen = () => {
   const [startIndex, setStartIndex] = useState(0);
@@ -21,7 +23,7 @@ const HomeScreen = () => {
     symbol: 'IBM',
   });
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,6 +55,7 @@ const HomeScreen = () => {
   const timestamps = Object.keys(weeklyData).slice(startIndex, startIndex + 7);
   const values = timestamps.map(timestamp => {
     const entry = weeklyData[timestamp];
+
     return {
       time: timestamp,
       open: parseFloat(entry['1. open']),
@@ -79,9 +82,7 @@ const HomeScreen = () => {
   };
 
   const handelNew = () => {
-    if (startIndex - 7 >= 0) {
-      setStartIndex(startIndex - 7);
-    }
+    setStartIndex(0);
   };
 
   return (
@@ -134,9 +135,9 @@ const styles = StyleSheet.create({
   },
   loadingContainer: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   dropDownContainer: {
     marginBottom: 20,
@@ -149,8 +150,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   text: {
-    marginBottom: 10,
     fontSize: 16,
     color: 'black',
+    marginBottom: 10,
   },
 });

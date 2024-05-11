@@ -1,6 +1,6 @@
 import React from 'react';
+import {Text, Dimensions} from 'react-native';
 import {LineChart} from 'react-native-chart-kit';
-import {View, Text, StyleSheet, Dimensions, Button} from 'react-native';
 
 import {COLORS} from '../constants/theme';
 

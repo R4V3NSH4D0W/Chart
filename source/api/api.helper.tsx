@@ -1,9 +1,6 @@
 import {APIKEY, BaseURl} from '../../env';
 import {IApiProps} from '../constants/app.types';
 
-export const IBMApiData = require('./IBMData.json');
-export const MSFTApiData = require('./MSFTData.json');
-
 export const getData = async ({symbol}: IApiProps) => {
   const data = await fetch(
     `${BaseURl}/query?function=TIME_SERIES_WEEKLY_ADJUSTED&symbol=${symbol}&apikey=${APIKEY}`,

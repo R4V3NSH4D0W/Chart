@@ -1,5 +1,3 @@
-import {IApiProps} from './app.types';
-
 export const dropDownItems = [
   {label: 'Open', value: 'open'},
   {label: 'High', value: 'high'},

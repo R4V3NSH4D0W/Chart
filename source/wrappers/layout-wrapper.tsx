@@ -1,5 +1,6 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {ScrollView, StyleSheet} from 'react-native';
+
 import {COLORS} from '../constants/theme';
 
 interface ILayout {

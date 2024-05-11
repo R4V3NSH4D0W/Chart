@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
+
 interface IDropDown {
   data: {label: string; value: string}[];
   onValueChange: (value: string) => void;
