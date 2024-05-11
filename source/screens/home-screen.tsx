@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, StyleSheet, Button, ActivityIndicator} from 'react-native';
 
 import Chart from '../components/chart';
-import PieChartComponet from '../components/piechart';
+import PieChartComponent from '../components/piechart';
 import BarChartComponent from '../components/bar-chart';
 
 import AAText from '../utils/text';
@@ -117,7 +117,7 @@ const HomeScreen = () => {
             </View>
 
             <Chart data={filteredData} />
-            <PieChartComponet data={filteredData} />
+            <PieChartComponent data={filteredData} />
             <BarChartComponent data={filteredData} />
           </>
         )}
